@@ -20,7 +20,7 @@
                 extend: {
                     colors: {
                         brand: {
-                            beige: '#F0F4EF', 
+                            beige: '#EEF3EC', 
                             sand: '#EAE7DC',  
                             sage: '#A5B5A1',  
                             olive: '#5C6B50', 
@@ -42,11 +42,21 @@
     
     <style>
         body {
-            background-color: #F0F4EF;
+            background-color: #EEF3EC;
             color: #1A2218;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Textura sutil de papel no fundo */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
         }
         
         .img-container {
@@ -251,30 +261,30 @@
     </div>
 
     <!-- SEÇÃO: Números de Impacto -->
-    <section class="py-24 bg-brand-beige relative z-20 border-b border-brand-sand">
+    <section class="py-28 bg-brand-dark relative z-20">
         <div class="max-w-[1600px] mx-auto px-6 md:px-12">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-brand-sand">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-white/10">
                 <div class="px-8 py-6 reveal-up text-center md:text-left">
-                    <span class="font-serif text-5xl md:text-6xl text-brand-dark block mb-2">200<span class="text-brand-sage">+</span></span>
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-brand-dark/50 font-medium">Salões Parceiros Ativos</p>
+                    <span class="font-serif text-6xl md:text-7xl text-white block mb-3 leading-none">200<span class="text-brand-sage text-4xl">+</span></span>
+                    <p class="text-[10px] uppercase tracking-[0.2em] text-white/40 font-medium">Salões Parceiros Ativos</p>
                 </div>
                 <div class="px-8 py-6 reveal-up text-center md:text-left" style="animation-delay: 0.1s">
-                    <span class="font-serif text-5xl md:text-6xl text-brand-dark block mb-2">98<span class="text-brand-sage">%</span></span>
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-brand-dark/50 font-medium">Taxa de Recompra</p>
+                    <span class="font-serif text-6xl md:text-7xl text-white block mb-3 leading-none">98<span class="text-brand-sage text-4xl">%</span></span>
+                    <p class="text-[10px] uppercase tracking-[0.2em] text-white/40 font-medium">Taxa de Recompra</p>
                 </div>
                 <div class="px-8 py-6 reveal-up text-center md:text-left" style="animation-delay: 0.2s">
-                    <span class="font-serif text-5xl md:text-6xl text-brand-dark block mb-2">0<span class="text-brand-sage">%</span></span>
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-brand-dark/50 font-medium">Ingredientes Animais</p>
+                    <span class="font-serif text-6xl md:text-7xl text-white block mb-3 leading-none">0<span class="text-brand-sage text-4xl">%</span></span>
+                    <p class="text-[10px] uppercase tracking-[0.2em] text-white/40 font-medium">Ingredientes Animais</p>
                 </div>
                 <div class="px-8 py-6 reveal-up text-center md:text-left" style="animation-delay: 0.3s">
-                    <span class="font-serif text-5xl md:text-6xl text-brand-dark block mb-2">15<span class="text-brand-sage">+</span></span>
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-brand-dark/50 font-medium">Anos de Pesquisa</p>
+                    <span class="font-serif text-6xl md:text-7xl text-white block mb-3 leading-none">15<span class="text-brand-sage text-4xl">+</span></span>
+                    <p class="text-[10px] uppercase tracking-[0.2em] text-white/40 font-medium">Anos de Pesquisa</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="essencia" class="py-32 md:py-48 bg-brand-beige relative z-20">
+    <section id="essencia" class="py-32 md:py-48 bg-[#E6EDE4] relative z-20">
         <div class="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
             
             <div class="flex flex-col md:flex-row justify-between items-end mb-24 reveal-up">
@@ -385,57 +395,82 @@
     </section>
 
     <!-- SEÇÃO: Depoimentos -->
-    <section class="py-32 bg-brand-sand relative z-20 overflow-hidden">
-        <div class="max-w-[1600px] mx-auto px-6 md:px-12">
-            <div class="mb-20 reveal-up">
-                <span class="text-brand-olive tracking-[0.2em] text-[10px] uppercase font-bold mb-6 flex items-center gap-4">
-                    <span class="w-12 h-[1px] bg-brand-olive"></span>
-                    O que dizem nossos parceiros
-                </span>
-                <h2 class="font-serif text-5xl md:text-6xl text-brand-dark leading-[1.1]">
-                    Salões que <span class="italic text-brand-sage">confiam</span>
-                </h2>
+    <section class="py-32 bg-brand-dark relative z-20 overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"1\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); background-size: 60px;"></div>
+        <div class="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
+            <div class="mb-20 reveal-up flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+                <div>
+                    <span class="text-brand-sage tracking-[0.2em] text-[10px] uppercase font-bold mb-6 flex items-center gap-4">
+                        <span class="w-12 h-[1px] bg-brand-sage"></span>
+                        O que dizem nossos parceiros
+                    </span>
+                    <h2 class="font-serif text-5xl md:text-6xl text-white leading-[1.1]">
+                        Salões que <span class="italic text-brand-sage">confiam</span>
+                    </h2>
+                </div>
+                <p class="text-white/40 text-sm font-light max-w-xs md:text-right">Depoimentos reais de profissionais parceiros da rede Toctus em Santa Catarina.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-10 reveal-up relative">
-                    <svg class="w-8 h-8 text-brand-sage mb-6 opacity-60" fill="currentColor" viewBox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
-                    <p class="font-light text-brand-dark/80 text-base leading-relaxed mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">
+                <div class="bg-brand-dark p-10 reveal-up group hover:bg-white/5 transition-colors duration-500">
+                    <div class="mb-8 flex justify-between items-start">
+                        <svg class="w-7 h-7 text-brand-sage opacity-40" fill="currentColor" viewBox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
+                        <div class="flex gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-sage"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-sage/30"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-sage/30"></span>
+                        </div>
+                    </div>
+                    <p class="font-light text-white/75 text-base leading-relaxed mb-10">
                         "Depois da Toctus, consegui fidelizar clientes que antes sumiam depois de 2 meses. O resultado do protocolo de reconstrução é tão visual que virou argumento de venda sozinho."
                     </p>
-                    <div class="border-t border-brand-sand pt-6 flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-brand-sage/30 flex items-center justify-center font-serif text-brand-dark text-lg">A</div>
+                    <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+                        <div class="w-9 h-9 rounded-full bg-brand-sage/20 flex items-center justify-center font-serif text-brand-sage">A</div>
                         <div>
-                            <span class="text-xs font-medium tracking-[0.1em] uppercase text-brand-dark block">Ana Paula S.</span>
-                            <span class="text-[10px] text-brand-dark/50 tracking-[0.1em]">Salão Ápice — Blumenau, SC</span>
+                            <span class="text-xs font-medium tracking-[0.1em] uppercase text-white block">Ana Paula S.</span>
+                            <span class="text-[10px] text-white/35 tracking-[0.05em]">Salão Ápice — Blumenau, SC</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-10 reveal-up relative" style="animation-delay:0.1s">
-                    <svg class="w-8 h-8 text-brand-sage mb-6 opacity-60" fill="currentColor" viewBox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
-                    <p class="font-light text-brand-dark/80 text-base leading-relaxed mb-8">
+                <div class="bg-brand-dark p-10 reveal-up group hover:bg-white/5 transition-colors duration-500" style="animation-delay:0.1s">
+                    <div class="mb-8 flex justify-between items-start">
+                        <svg class="w-7 h-7 text-brand-sage opacity-40" fill="currentColor" viewBox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
+                        <div class="flex gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-sage"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-sage"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-sage/30"></span>
+                        </div>
+                    </div>
+                    <p class="font-light text-white/75 text-base leading-relaxed mb-10">
                         "Sou vegana há 8 anos e nunca tinha encontrado uma linha profissional que fosse 100% ética e entregasse resultado de verdade. A Toctus mudou o portfólio do meu salão."
                     </p>
-                    <div class="border-t border-brand-sand pt-6 flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-brand-sage/30 flex items-center justify-center font-serif text-brand-dark text-lg">R</div>
+                    <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+                        <div class="w-9 h-9 rounded-full bg-brand-sage/20 flex items-center justify-center font-serif text-brand-sage">R</div>
                         <div>
-                            <span class="text-xs font-medium tracking-[0.1em] uppercase text-brand-dark block">Renata M.</span>
-                            <span class="text-[10px] text-brand-dark/50 tracking-[0.1em]">Studio Raíz — Joinville, SC</span>
+                            <span class="text-xs font-medium tracking-[0.1em] uppercase text-white block">Renata M.</span>
+                            <span class="text-[10px] text-white/35 tracking-[0.05em]">Studio Raíz — Joinville, SC</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-10 reveal-up relative" style="animation-delay:0.2s">
-                    <svg class="w-8 h-8 text-brand-sage mb-6 opacity-60" fill="currentColor" viewBox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
-                    <p class="font-light text-brand-dark/80 text-base leading-relaxed mb-8">
+                <div class="bg-brand-dark p-10 reveal-up group hover:bg-white/5 transition-colors duration-500" style="animation-delay:0.2s">
+                    <div class="mb-8 flex justify-between items-start">
+                        <svg class="w-7 h-7 text-brand-sage opacity-40" fill="currentColor" viewBox="0 0 32 32"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/></svg>
+                        <div class="flex gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-sage"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-sage"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-sage"></span>
+                        </div>
+                    </div>
+                    <p class="font-light text-white/75 text-base leading-relaxed mb-10">
                         "O suporte da equipe Toctus é diferente de qualquer distribuidor que já trabalhei. Eles ensinam a vender, não só a aplicar. O ticket médio do meu salão subiu 30% em 4 meses."
                     </p>
-                    <div class="border-t border-brand-sand pt-6 flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-brand-sage/30 flex items-center justify-center font-serif text-brand-dark text-lg">C</div>
+                    <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+                        <div class="w-9 h-9 rounded-full bg-brand-sage/20 flex items-center justify-center font-serif text-brand-sage">C</div>
                         <div>
-                            <span class="text-xs font-medium tracking-[0.1em] uppercase text-brand-dark block">Camila F.</span>
-                            <span class="text-[10px] text-brand-dark/50 tracking-[0.1em]">Coiff Vegano — Florianópolis, SC</span>
+                            <span class="text-xs font-medium tracking-[0.1em] uppercase text-white block">Camila F.</span>
+                            <span class="text-[10px] text-white/35 tracking-[0.05em]">Coiff Vegano — Florianópolis, SC</span>
                         </div>
                     </div>
                 </div>
@@ -487,7 +522,7 @@
     </section>
 
     <!-- SEÇÃO: FAQ -->
-    <section class="py-32 bg-brand-beige relative z-20 border-t border-brand-sand">
+    <section class="py-32 bg-white relative z-20">
         <div class="max-w-[1000px] mx-auto px-6 md:px-12">
             <div class="mb-16 reveal-up">
                 <span class="text-brand-olive tracking-[0.2em] text-[10px] uppercase font-bold mb-6 flex items-center gap-4">
@@ -538,7 +573,7 @@
         </div>
     </section>
 
-    <section id="contato" class="py-32 bg-brand-beige relative z-20">
+    <section id="contato" class="py-32 bg-white relative z-20">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 
